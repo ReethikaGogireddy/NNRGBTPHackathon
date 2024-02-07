@@ -26,10 +26,27 @@ business_partnerno: Integer;
  is_customer: Boolean default false;
 }
 
-@cds.persistence.skip
-entity State {
+
+entity State { 
  @title:'code'
  key code : String(2);
  @title :'Description'
  description : String(25); 
+}
+
+entity Store :cuid,managed{
+@title: 'Store ID'
+store_id: String(7);
+ @title :'Name'
+ name: String(40) @mandatory; 
+ @title :'Address 1'
+ address1: String(100) @mandatory;
+ @title :'Address 2'
+ address2: String(100) @mandatory;
+ @title :'City'
+ city: String(50) @mandatory;
+ @title :'State'
+ state: Association to State;
+ @title :'PIN code'
+ pin_code : String(10);
 }

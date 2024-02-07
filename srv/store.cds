@@ -1,15 +1,16 @@
 using {  Electronics } from './service';
 
 
-annotate Electronics.BusinessPartner with {
+annotate Electronics.Store with {
  pin_code      @assert.format: '^[1-9][0-9]{5}$';
     
 }
 
-annotate Electronics.BusinessPartner with @(
+
+annotate Electronics.Store with @(
     UI.LineItem:[
         {
-            Value: business_partnerno
+            Value: store_id
         },
         {
             Value: name
@@ -29,24 +30,12 @@ annotate Electronics.BusinessPartner with @(
         {
             Value: pin_code
         },
-        {
-            Value: is_gstn_registred
-        },
-        {
-            Value: gst_no
-        },
-        {
-            Value: is_vendor
-        },
-        {
-            Value: is_customer
-        },
     ],
-     UI.FieldGroup #BusinessPartner : {
+     UI.FieldGroup #Store : {
         $Type : 'UI.FieldGroupType',
         Data : [
             {
-            Value: business_partnerno
+            Value: store_id
         },
         {
             Value: name
@@ -66,37 +55,34 @@ annotate Electronics.BusinessPartner with @(
         {
             Value: pin_code
         },
-        {
-            Value: gst_no
-        },
         ],
     },
     UI.Facets : [
         {
             $Type : 'UI.ReferenceFacet',
-            ID : 'BusinessPartnerFacet',
-            Label : 'BusinessPartner',
-            Target : '@UI.FieldGroup#BusinessPartner',
+            ID : 'StoreFacet',
+            Label : 'Store',
+            Target : '@UI.FieldGroup#Store',
         },
     ],
 
 );
 
-annotate Electronics.State with @(
-UI.LineItem: [
-        {
-            @Type : 'UI.DataField',
-            Value : code
-        },
-        {
-            @Type : 'UI.DataField',
-            Value : description
-        },
-],
-);
+// annotate Electronics.State with @(
+// UI.LineItem: [
+//         {
+//             @Type : 'UI.DataField',
+//             Value : code
+//         },
+//         {
+//             @Type : 'UI.DataField',
+//             Value : description
+//         },
+// ],
+// );
 
 
-annotate Electronics.BusinessPartner with {
+annotate Electronics.Store with {
     state @(     
         Common.ValueListWithFixedValues: true,
         Common.ValueList : {

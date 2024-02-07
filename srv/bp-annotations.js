@@ -1,9 +1,7 @@
 const cds = require("@sap/cds");
 module.exports = cds.service.impl(function () {
-    const { BusinessPartner, States} = this.entities();
- 
-     
-    this.on("READ", State, async (req) => {
+    const { BusinessPartner, State} = this.entities();
+     this.on("READ", State, async (req) => {
         states = [
           { code: "TS", description: "Telangana" },
           { code: "AP", description: "AndhraPradesh" },
@@ -15,3 +13,4 @@ module.exports = cds.service.impl(function () {
       });
 
 });
+
