@@ -16,6 +16,8 @@ business_partnerno: Integer;
  state: Association to State;
  @title :'PIN code'
  pin_code : String(10);
+@title :'PanNo'
+ pan_no : String(10);
  @title:'is_gstn_registred' 
  is_gstn_registred : Boolean default false;
  @title: 'GSTIN Number'

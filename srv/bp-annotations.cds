@@ -30,6 +30,9 @@ annotate Electronics.BusinessPartner with @(
             Value: pin_code
         },
         {
+            Value: pan_no
+        },
+        {
             Value: is_gstn_registred
         },
         {
@@ -65,6 +68,9 @@ annotate Electronics.BusinessPartner with @(
         },
         {
             Value: pin_code
+        },
+        {
+            Value: pan_no
         },
         {
             Value: gst_no
