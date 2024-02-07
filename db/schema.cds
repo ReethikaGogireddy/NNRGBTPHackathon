@@ -64,5 +64,5 @@ entity Product:cuid,managed{
  product_cp: Integer;
  @title: 'Product Sell Price'
  product_sp: Integer;
-
 }
+

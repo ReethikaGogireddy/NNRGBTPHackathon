@@ -83,7 +83,6 @@
       "css": []
     },
     "routing": {
-      "config": {},
       "routes": [
         {
           "pattern": ":?query:",
@@ -110,6 +109,26 @@
                 "BusinessPartner": {
                   "detail": {
                     "route": "BusinessPartnerObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "actions": {
+                    "Electronics": {
+                      "press": "businesspartner.ext.electronics.Electronics.SetVendor",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "Set vendor"
+                    },
+                    "Electronics2": {
+                      "press": "businesspartner.ext.electronics.Electronics.SetCustomer",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": true,
+                      "text": "Set Customer"
+                    }
                   }
                 }
               }

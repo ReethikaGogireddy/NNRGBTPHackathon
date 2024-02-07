@@ -72,6 +72,15 @@ annotate Electronics.BusinessPartner with @(
         {
             Value: gst_no
         },
+        {
+            Value: is_gstn_registred
+        },
+        {
+            Value: is_vendor
+        },
+        {
+            Value: is_customer
+        },
         ],
     },
     UI.Facets : [
