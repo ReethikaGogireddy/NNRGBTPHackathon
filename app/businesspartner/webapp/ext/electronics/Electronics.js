@@ -6,7 +6,6 @@ sap.ui.define([
     return {
         SetVendor: function (oBindingContext, aSelectedContexts) {
             aSelectedContexts.forEach((element) => {
-              //MessageToast.show(element.sPath);
               var oData = jQuery
                 .ajax({
                   type: "PATCH",
@@ -19,7 +18,6 @@ sap.ui.define([
           },
           SetVendor: function (oBindingContext, aSelectedContexts) {
             aSelectedContexts.forEach((element) => {
-              //MessageToast.show(element.sPath);
               var oData = jQuery
                 .ajax({
                   type: "PATCH",
