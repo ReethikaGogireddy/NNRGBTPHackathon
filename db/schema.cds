@@ -50,3 +50,17 @@ store_id: String(7);
  @title :'PIN code'
  pin_code : String(10);
 }
+
+entity Product:cuid,managed{
+ @title:'Product ID'
+ product_id: String(10);
+ @title:'Product Name'
+ product_name: String(10);
+//  @title:'Product Image'
+//  product_image: IsURL;
+ @title: 'Product Cost Price'
+ product_cp: Integer;
+ @title: 'Product Sell Price'
+ product_sp: Integer;
+
+}
