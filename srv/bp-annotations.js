@@ -26,8 +26,18 @@ module.exports = cds.service.impl(function () {
           });
         }
       });
-    
+      
+      this.before(["CREATE", "UPDATE"], BusinessPartner, async (req) => {
+        results = await cds.run(req.query);
+        if (Array.isArray(results)) {
+          results.forEach((element) => {
+            element.business_partnerno++;
+          });
+        } else {
+           results.business_partnerno=business_partnerno++;
+        }
 
+      });
 
 });
 

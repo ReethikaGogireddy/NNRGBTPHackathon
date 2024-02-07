@@ -3,7 +3,7 @@ using {managed, cuid} from '@sap/cds/common';
 
 entity BusinessPartner:cuid,managed{
 @title :'Business Partner Number'
-business_partnerno: Integer;
+business_partnerno: Integer @Core.Computed;
  @title :'Name'
  name: String(40) @mandatory; 
  @title :'Address 1'

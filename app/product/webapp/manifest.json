@@ -103,7 +103,7 @@
           "name": "sap.fe.templates.ListReport",
           "options": {
             "settings": {
-              "intialLoad":"Enabled",
+              "initialLoad": "Enabled",
               "contextPath": "/Product",
               "variantManagement": "Page",
               "navigation": {
