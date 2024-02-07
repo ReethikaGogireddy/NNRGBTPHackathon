@@ -13,7 +13,7 @@ business_partnerno: Integer;
  @title :'City'
  city: String(50) @mandatory;
  @title :'State'
- state: String(40) @mandatory;
+ state: Association to State;
  @title :'PIN code'
  pin_code : String(10);
  @title:'is_gstn_registred' 
@@ -24,4 +24,12 @@ business_partnerno: Integer;
  is_vendor : Boolean default false;
  @title:'is_customer' 
  is_customer: Boolean default false;
+}
+
+@cds.persistence.skip
+entity State {
+ @title:'code'
+ key code : String(2);
+ @title :'Description'
+ description : String(25); 
 }

@@ -24,7 +24,7 @@ annotate Electronics.BusinessPartner with @(
             Value: city
         },
         {
-            Value: state
+            Value: state.description
         },
         {
             Value: pin_code
@@ -61,7 +61,7 @@ annotate Electronics.BusinessPartner with @(
             Value: city
         },
         {
-            Value: state
+            Value: state_code
         },
         {
             Value: pin_code
@@ -81,3 +81,25 @@ annotate Electronics.BusinessPartner with @(
     ],
 
 );
+
+annotate Electronics.BusinessPartner with {
+    state @(     
+        Common.ValueListWithFixedValues: true,
+        Common.ValueList : {
+            Label: 'States',
+            CollectionPath : 'State',
+            Parameters     : [
+                {
+                    $Type             : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : state_code,
+                    ValueListProperty : 'code'
+                },
+               
+                {
+                    $Type             : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'description'
+                }
+            ]
+        }
+    )
+}
