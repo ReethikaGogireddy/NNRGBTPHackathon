@@ -11,7 +11,7 @@ sap.ui.define([
                 .ajax({
                   type: "PATCH",
                   contentType: "application/json",
-                  url: "/odata/v4/electronics" + element.sPath,
+                  url: "/odata/v4/electronics/" + element.sPath,
                   data: JSON.stringify({ is_vendor: true }),
                 })
                 .then(element.requestRefresh());
@@ -24,7 +24,7 @@ sap.ui.define([
                 .ajax({
                   type: "PATCH",
                   contentType: "application/json",
-                  url: "/odata/v4/electronics" + element.sPath,
+                  url: "/odata/v4/electronics/" + element.sPath,
                   data: JSON.stringify({ is_vendor: true }),
                 })
                 .then(element.requestRefresh());

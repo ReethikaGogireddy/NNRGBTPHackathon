@@ -49,6 +49,9 @@ annotate Electronics.BusinessPartner with @(
         $Type : 'UI.FieldGroupType',
         Data : [
         {
+            Value: business_partnerno
+        },
+        {
             Value: name
         },
         {
