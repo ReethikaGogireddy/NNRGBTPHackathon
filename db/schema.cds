@@ -58,11 +58,58 @@ entity Product:cuid,managed{
  product_id: String(10);
  @title:'Product Name'
  product_name: String(10);
-//  @title:'Product Image'
-//  product_image: IsURL;
+ @title:'Product Image'
+ ImageURL : String(500);
  @title: 'Product Cost Price'
  product_cp: Integer;
  @title: 'Product Sell Price'
  product_sp: Integer;
 }
 
+entity StockData:cuid,managed{
+    @title:'Stock Id'
+    store_id:String(10);
+    @title:'Product Id'
+    product_id:Association to Product;
+    @title:'Stock Quantity'
+    stock_qty:Integer;
+}
+
+entity PurchaseApp : cuid,managed {
+    @title:'Purchase Order Number'
+    purchase_orderno:String(10);
+    @title:'Business Partner'
+    business_partner:Boolean default false;
+    @title:'Purchase Order Date'
+    purchase_orderdate:String(10);
+    @title:'Items'
+    Items:Composition of many {
+        key ID: UUID;
+        item: Association to Items;
+    }
+}
+
+entity SalesApp:cuid,managed{
+    @title:'Sales Order Number'
+    sales_orderno:String(10);
+    @title:'Business Partner'
+    business_partner:String(50);
+    @title:'Sales Date'
+    sales_orderdate:String(10);
+    @title:'Items'
+    Items:Composition of many {
+        key ID: UUID;
+       item:Association to Items;
+    }
+}
+
+entity Items:cuid,managed{
+    @title:'ProductID'
+    product_id:Association to Product;
+    @title:'Quantity'
+    qty:Association to StockData;
+    @title:'Price'
+    price:Association to Product;
+    @title:'Store ID'
+    store_id: Association to StockData;
+}

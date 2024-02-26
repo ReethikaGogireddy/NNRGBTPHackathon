@@ -1,13 +1,4 @@
 using {  Electronics } from './service';
-
-// annotate Electronics.Product with {
-//     @Common.Text : '{Electronics.ProductPictureURL}', // Assuming ProductPictureURL holds the image URL
-//     @Core.IsURL : true,
-//     @Core.MediaType : 'image/jpg',
-//     ProductPictureURL : 'https://www.amazon.in/Round-Cane-Fruit-Basket-Handle/dp/B07DXJWWLH' // Replace with your actual image URL
-// };
-
-
 annotate Electronics.Product with @(
     UI.LineItem:[
         {
@@ -16,10 +7,10 @@ annotate Electronics.Product with @(
         {
             Value:product_name
         },
-        // { $Type : 'UI.DataField',
-        //   Value : ProductPictureURL,
-        // ![@UI.Importance] : #High
-        // },
+        {   $Type : 'UI.DataField',
+            Value : 'ImageURL',
+           ![@UI.Importance] : #High
+        },
         {
             Value: product_cp
         },
@@ -38,6 +29,9 @@ annotate Electronics.Product with @(
             Value:product_name
         },
         {
+            Value : 'ImageURL',
+        },
+        {
             Value: product_cp
         },
         {
@@ -54,3 +48,10 @@ annotate Electronics.Product with @(
         },
     ],
 );
+
+annotate Electronics.Product with {
+  @Common.Text : '{Product}'
+  @Core.IsURL : true
+  @Core.MediaType : 'image/jpg'
+  ImageURL
+};
