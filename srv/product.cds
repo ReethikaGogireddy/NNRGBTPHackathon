@@ -8,7 +8,7 @@ annotate Electronics.Product with @(
             Value:product_name
         },
         {   $Type : 'UI.DataField',
-            Value : 'ImageURL',
+            Value : ImageURL,
            ![@UI.Importance] : #High
         },
         {
@@ -29,7 +29,7 @@ annotate Electronics.Product with @(
             Value:product_name
         },
         {
-            Value : 'ImageURL',
+            Value : ImageURL,
         },
         {
             Value: product_cp
@@ -50,8 +50,9 @@ annotate Electronics.Product with @(
 );
 
 annotate Electronics.Product with {
-  @Common.Text : '{Product}'
-  @Core.IsURL : true
-  @Core.MediaType : 'image/jpg'
-  ImageURL
+@Common.Text : ' {Product}'
+@Core.IsURL: true
+@Core.MediaType: 'image/jpg'
+ImageURL;
 };
+

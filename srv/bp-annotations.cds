@@ -33,7 +33,7 @@ annotate Electronics.BusinessPartner with @(
             Value: pan_no
         },
         {
-            Value: is_gstn_registred
+            Value: is_gstn_registered
         },
         {
             Value: gst_no
@@ -48,9 +48,6 @@ annotate Electronics.BusinessPartner with @(
      UI.FieldGroup #BusinessPartner : {
         $Type : 'UI.FieldGroupType',
         Data : [
-        {
-            Value: business_partnerno
-        },
         {
             Value: name
         },
@@ -76,7 +73,7 @@ annotate Electronics.BusinessPartner with @(
             Value: gst_no
         },
         {
-            Value: is_gstn_registred
+            Value: is_gstn_registered
         },
         {
             Value: is_vendor
@@ -131,3 +128,4 @@ annotate Electronics.BusinessPartner with {
         }
     )
 }
+
