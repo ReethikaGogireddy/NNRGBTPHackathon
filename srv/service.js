@@ -34,5 +34,11 @@ module.exports = cds.service.impl(function () {
         target: "is_gstn_registered",
       });
     }
+    const results = await cds
+      .transaction(req)
+      .run(SELECT.from(BusinessPartner));
+    const count = results.length;
+
+    req.data.business_partnerno = count + 1;
   });
 });
