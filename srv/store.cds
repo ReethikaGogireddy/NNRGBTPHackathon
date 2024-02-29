@@ -68,19 +68,6 @@ annotate Electronics.Store with @(
 
 );
 
-// annotate Electronics.State with @(
-// UI.LineItem: [
-//         {
-//             @Type : 'UI.DataField',
-//             Value : code
-//         },
-//         {
-//             @Type : 'UI.DataField',
-//             Value : description
-//         },
-// ],
-// );
-
 
 annotate Electronics.Store with {
     state @(     

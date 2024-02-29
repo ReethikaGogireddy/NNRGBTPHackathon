@@ -28,7 +28,7 @@ business_partnerno: Integer default 0 @Core.Computed;
  is_customer: Boolean default false;
 }
 
-
+@cds.persistence.skip
 entity State { 
  @title:'code'
  key code : String(2);
@@ -38,7 +38,7 @@ entity State {
 
 entity Store :cuid,managed{
 @title: 'Store ID'
-store_id: String(7);
+store_id: String(10);
  @title :'Name'
  name: String(40) @mandatory; 
  @title :'Address 1'
@@ -59,7 +59,7 @@ entity Product:cuid,managed{
  @title:'Product Name'
  product_name: String(10);
  @title:'Product Image'
- ImageURL : String(500);
+ ImageURL : String(500) default 'https://t3.ftcdn.net/jpg/04/34/72/82/240_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg' ;
  @title: 'Product Cost Price'
  product_cp: Integer;
  @title: 'Product Sell Price'
@@ -68,7 +68,7 @@ entity Product:cuid,managed{
 
 entity StockData:cuid,managed{
     @title:'Stock Id'
-    store_id:String(10);
+    store_id:Association to Store;
     @title:'Product Id'
     product_id:Association to Product;
     @title:'Stock Quantity'
@@ -79,13 +79,21 @@ entity PurchaseApp : cuid,managed {
     @title:'Purchase Order Number'
     purchase_orderno:String(10);
     @title:'Business Partner'
-    business_partner:Boolean default false;
+    business_partner:String(50);
+    @title:'Business Partner is Vendor'
+    is_vendor:Boolean default false;
     @title:'Purchase Order Date'
-    purchase_orderdate:String(10);
+    purchase_orderdate:Date;
     @title:'Items'
-    Items:Composition of many {
-        key ID: UUID;
-        item: Association to Items;
+    Items: Composition of many  {
+    @title:'ProductID'
+    product_id:Association to Product;
+    @title:'Quantity'
+    qty:Integer;
+    @title:'Price'
+    price:Integer;
+    @title:'Store ID'
+    store_id: Association to Store;
     }
 }
 
@@ -94,22 +102,29 @@ entity SalesApp:cuid,managed{
     sales_orderno:String(10);
     @title:'Business Partner'
     business_partner:String(50);
+    @title:'Business Partner is Customer'
+    is_customer:Boolean default false;
     @title:'Sales Date'
-    sales_orderdate:String(10);
-    @title:'Items'
-    Items:Composition of many {
-        key ID: UUID;
-       item:Association to Items;
-    }
-}
-
-entity Items:cuid,managed{
+    sales_orderdate:Date;
+    Items: Composition of many  {
     @title:'ProductID'
     product_id:Association to Product;
     @title:'Quantity'
-    qty:Association to StockData;
+    qty:Integer;
     @title:'Price'
-    price:Association to Product;
+    price:Integer;
     @title:'Store ID'
-    store_id: Association to StockData;
+    store_id: Association to Store;
+    }
 }
+
+// entity Items:cuid,managed{
+//     @title:'ProductID'
+//     product_id:Association to Product;
+//     @title:'Quantity'
+//     qty:Association to StockData;
+//     @title:'Price'
+//     price:Association to Product;
+//     @title:'Store ID'
+//     store_id: Association to Store;
+// }

@@ -22,7 +22,7 @@ annotate Electronics.Product with @(
      UI.FieldGroup #Product : {
         $Type : 'UI.FieldGroupType',
         Data : [
-            {
+        {
             Value: product_id
         },
         {
