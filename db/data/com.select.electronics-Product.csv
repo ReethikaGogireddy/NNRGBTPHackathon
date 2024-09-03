@@ -1,3 +1,3 @@
-product_id,product_name,product_cp,product_sp
-a067d,Fridge,18000,20000
-a054f,Tv,30000,35000
+product_id,product_name,ImageURL,product_cp,product_sp
+a067d,Fridge,https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1680068746/Croma%20Assets/Large%20Appliances/Refrigerator/Images/266717_nnxrib.png?tr=w-640,18000,20000
+a054f,Tv,https://images.samsung.com/is/image/samsung/p6pim/in/ua55cue60aklxl/gallery/in-crystal-uhd-cu7000-458954-ua55cue60aklxl-536447022?$1300_1038_PNG$,30000,35000

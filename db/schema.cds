@@ -3,7 +3,7 @@ using {managed, cuid} from '@sap/cds/common';
 
 entity BusinessPartner:cuid,managed{
 @title :'Business Partner Number'
-business_partnerno: Integer @Core.Computed;
+business_partnerno: Integer default 0 @Core.Computed;
  @title :'Name'
  name: String(40) @mandatory; 
  @title :'Address 1'
@@ -18,10 +18,10 @@ business_partnerno: Integer @Core.Computed;
  pin_code : String(10);
 @title :'PanNo'
  pan_no : String(10);
- @title:'is_gstn_registred' 
- is_gstn_registred : Boolean default false;
+ @title:'is_gstn_registered' 
+ is_gstn_registered : Boolean default false;
  @title: 'GSTIN Number'
- gst_no: String(15) @mandatory;
+ gst_no: String(15) ;
  @title:'is_vendor'
  is_vendor : Boolean default false;
  @title:'is_customer' 
